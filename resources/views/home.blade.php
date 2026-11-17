@@ -41,7 +41,11 @@
                     {{ $h['cta_contact'] }}
                 </a>
                 @if($hasCv)
-                <a href="{{ asset('cv-yubel.pdf') }}" class="btn btn-outline" download>
+                <a href="{{ asset('cv-yubel.pdf') }}" class="btn btn-outline" target="_blank" rel="noopener">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                    {{ $h['cta_cv_view'] }}
+                </a>
+                <a href="{{ asset('cv-yubel.pdf') }}" class="btn btn-outline" download="CV-Yubel-Hakinen-Joshua-Lita.pdf">
                     <i class="fas fa-download" aria-hidden="true"></i>
                     {{ $h['cta_cv'] }}
                 </a>

@@ -26,6 +26,7 @@ return [
         'cta_projects' => 'View Projects',
         'cta_contact' => 'Contact Me',
         'cta_cv' => 'Download CV',
+        'cta_cv_view' => 'View CV',
         'scroll' => 'Scroll',
         'chart_eyebrow' => 'Data profiling',
         'chart_title' => 'Online Retail II',

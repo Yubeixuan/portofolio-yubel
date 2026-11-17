@@ -29,13 +29,13 @@ $out = $root.'/static';
 if (is_dir($out)) {
     $it = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator($out, FilesystemIterator::SKIP_DOTS),
-        RecursiveIteratorIterator::CHILDREN_FIRST
+        RecursiveIteratorIterator::CHILD_FIRST
     );
     foreach ($it as $f) {
         $f->isDir() ? rmdir($f->getPathname()) : unlink($f->getPathname());
     }
 }
-mkdir($out, 0777, true);
+is_dir($out) || mkdir($out, 0777, true);
 
 // Salin aset publik
 $copy = function (string $from, string $to) use (&$copy) {

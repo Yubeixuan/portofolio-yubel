@@ -26,6 +26,7 @@ return [
         'cta_projects' => 'Lihat Projects',
         'cta_contact' => 'Hubungi Saya',
         'cta_cv' => 'Unduh CV',
+        'cta_cv_view' => 'Lihat CV',
         'scroll' => 'Scroll',
         'chart_eyebrow' => 'Data profiling',
         'chart_title' => 'Online Retail II',
