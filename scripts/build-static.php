@@ -19,6 +19,9 @@ if (! is_file($root.'/public/build/manifest.json')) {
     exit(1);
 }
 
+// Snippet Vercel Analytics ikut dipasang di build statis (aktifkan juga di dashboard Vercel)
+$_ENV['SITE_ANALYTICS'] = $_SERVER['SITE_ANALYTICS'] = 'true';
+
 require $root.'/vendor/autoload.php';
 $app = require $root.'/bootstrap/app.php';
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);

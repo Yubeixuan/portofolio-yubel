@@ -33,21 +33,27 @@
     
     <script>document.documentElement.classList.add('js');</script>
 
-    <link rel="preload" as="style" href="/build/assets/app-CdQZSdd_.css" /><link rel="modulepreload" as="script" href="/build/assets/app-CcbIxBtB.js" /><link rel="stylesheet" href="/build/assets/app-CdQZSdd_.css" /><script type="module" src="/build/assets/app-CcbIxBtB.js"></script></head>
+    <link rel="preload" as="style" href="/build/assets/app-DFDaLuBW.css" /><link rel="modulepreload" as="script" href="/build/assets/app-mPBgfPky.js" /><link rel="stylesheet" href="/build/assets/app-DFDaLuBW.css" /><script type="module" src="/build/assets/app-mPBgfPky.js"></script>
+        
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    </head>
 <body class="min-h-screen bg-bg text-ink">
 
     
+    <div id="scroll-progress" aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px] origin-left scale-x-0 bg-accent"></div>
+
     <nav id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-bg/80 backdrop-blur-xl transition-colors">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
             <a href="#home" class="text-lg font-extrabold tracking-tight">portofolio<span class="text-accent">.</span></a>
 
             <div class="flex items-center gap-3">
                 <ul class="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
-                                        <li><a href="#about" class="transition-colors hover:text-ink">About</a></li>
-                                        <li><a href="#projects" class="transition-colors hover:text-ink">Projects</a></li>
-                                        <li><a href="#experience" class="transition-colors hover:text-ink">Experience</a></li>
-                                        <li><a href="#skills" class="transition-colors hover:text-ink">Skills</a></li>
-                                        <li><a href="#contact" class="transition-colors hover:text-ink">Contact</a></li>
+                                        <li><a href="#about" data-nav="about" class="transition-colors hover:text-ink">About</a></li>
+                                        <li><a href="#projects" data-nav="projects" class="transition-colors hover:text-ink">Projects</a></li>
+                                        <li><a href="#experience" data-nav="experience" class="transition-colors hover:text-ink">Experience</a></li>
+                                        <li><a href="#skills" data-nav="skills" class="transition-colors hover:text-ink">Skills</a></li>
+                                        <li><a href="#contact" data-nav="contact" class="transition-colors hover:text-ink">Contact</a></li>
                                     </ul>
 
                 <a href="/" hreflang="id" aria-label="Ganti ke Bahasa Indonesia"
@@ -63,11 +69,11 @@
         </div>
 
         <ul id="mobile-menu" class="hidden border-t border-line px-5 pb-4 pt-2 text-sm font-medium text-muted md:hidden">
-                        <li><a href="#about" class="block py-3">About</a></li>
-                        <li><a href="#projects" class="block py-3">Projects</a></li>
-                        <li><a href="#experience" class="block py-3">Experience</a></li>
-                        <li><a href="#skills" class="block py-3">Skills</a></li>
-                        <li><a href="#contact" class="block py-3">Contact</a></li>
+                        <li><a href="#about" data-nav="about" class="block py-3">About</a></li>
+                        <li><a href="#projects" data-nav="projects" class="block py-3">Projects</a></li>
+                        <li><a href="#experience" data-nav="experience" class="block py-3">Experience</a></li>
+                        <li><a href="#skills" data-nav="skills" class="block py-3">Skills</a></li>
+                        <li><a href="#contact" data-nav="contact" class="block py-3">Contact</a></li>
                     </ul>
     </nav>
 
@@ -85,7 +91,12 @@
                 Whatever company needs me to be or do
             </div>
 
-            <p class="reveal mt-8 text-sm font-semibold tracking-wide text-muted" style="--d:60ms">Yubel Hakinen Joshua Lita</p>
+            <div class="reveal mt-8" style="--d:60ms">
+                <p class="text-sm font-semibold tracking-wide text-muted">Yubel Hakinen Joshua Lita</p>
+                <p class="mt-1 text-sm font-semibold text-accent">
+                    <span data-rotate data-items='["Data Analyst","IT Business Analyst","Financial Analysis"]'>Data Analyst</span>
+                </p>
+            </div>
 
             <h1 class="reveal mt-3 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl" style="--d:100ms">
                 Turning data into<br>
@@ -174,19 +185,19 @@
             <dl class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
                                 <div class="reveal flex flex-col rounded-xl border border-line bg-card p-4" style="--d:220ms">
                     <dt class="order-2 mt-1 text-xs leading-snug text-muted">GPA (through semester 4)</dt>
-                    <dd class="text-2xl font-bold text-ink">3.18</dd>
+                                        <dd class="text-2xl font-bold text-ink"  data-count="3.18" data-decimals="2" >3.18</dd>
                 </div>
                                 <div class="reveal flex flex-col rounded-xl border border-line bg-card p-4" style="--d:280ms">
                     <dt class="order-2 mt-1 text-xs leading-snug text-muted">Web, mobile &amp; data projects</dt>
-                    <dd class="text-2xl font-bold text-ink">6</dd>
+                                        <dd class="text-2xl font-bold text-ink"  data-count="6" data-decimals="0" >6</dd>
                 </div>
                                 <div class="reveal flex flex-col rounded-xl border border-line bg-card p-4" style="--d:340ms">
                     <dt class="order-2 mt-1 text-xs leading-snug text-muted">Rental rooms supported since 2019</dt>
-                    <dd class="text-2xl font-bold text-ink">29</dd>
+                                        <dd class="text-2xl font-bold text-ink"  data-count="29" data-decimals="0" >29</dd>
                 </div>
                                 <div class="reveal flex flex-col rounded-xl border border-line bg-card p-4" style="--d:400ms">
                     <dt class="order-2 mt-1 text-xs leading-snug text-muted">English (certified)</dt>
-                    <dd class="text-2xl font-bold text-ink">C1–C2</dd>
+                                        <dd class="text-2xl font-bold text-ink" >C1–C2</dd>
                 </div>
                             </dl>
         </div>
@@ -201,8 +212,27 @@
             Selected <span class="text-accent">Projects</span>
         </h2>
 
-        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:0ms">
+        <div class="filter-bar mt-8 flex-wrap gap-2" role="group" aria-label="Filter projects">
+                        <button type="button" data-filter="all" aria-pressed="true"
+                    class="filter-btn rounded-full border border-line px-4 py-1.5 text-sm font-medium text-muted transition-colors hover:border-accent/50 hover:text-ink">
+                All
+            </button>
+                        <button type="button" data-filter="data" aria-pressed="false"
+                    class="filter-btn rounded-full border border-line px-4 py-1.5 text-sm font-medium text-muted transition-colors hover:border-accent/50 hover:text-ink">
+                Data
+            </button>
+                        <button type="button" data-filter="web" aria-pressed="false"
+                    class="filter-btn rounded-full border border-line px-4 py-1.5 text-sm font-medium text-muted transition-colors hover:border-accent/50 hover:text-ink">
+                Web
+            </button>
+                        <button type="button" data-filter="app" aria-pressed="false"
+                    class="filter-btn rounded-full border border-line px-4 py-1.5 text-sm font-medium text-muted transition-colors hover:border-accent/50 hover:text-ink">
+                Apps
+            </button>
+                    </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                                    <article data-cats="data" class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:0ms">
                 <div class="relative aspect-video overflow-hidden border-b border-line bg-surface">
                                             <img src="/images/market-basket-dashboard.jpg" alt="Market Basket Analysis &amp; Demand Forecasting" loading="lazy"
                              class="size-full object-cover transition duration-500 group-hover:scale-[1.03]">
@@ -224,9 +254,15 @@
                     <p class="mt-4 text-sm text-muted">Big Data Analytics team project (4 members) on reducing overstock waste in small online retail, aligned with UN SDG 12. I developed all the code and the report, and serve as lead presenter.</p>
                     <p class="mt-3 text-sm text-muted">Profiled the Online Retail II dataset (1.07 million transaction rows) and identified 34,335 duplicate rows and 8,292 cancellation invoices for cleaning; applying association rule mining and time series forecasting to generate business recommendations. The proposal includes a 15-article literature review, and interactive dashboards are built in Power BI and Tableau to visualize sales patterns and forecasts.</p>
 
+                                        <div class="mt-auto flex flex-wrap gap-4 pt-5">
+                                                <button type="button" data-open-dialog="case-market"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-opacity hover:opacity-80">
+                            <i class="fas fa-expand" aria-hidden="true"></i> View case study
+                        </button>
+                                                                    </div>
                                     </div>
             </article>
-                                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:80ms">
+                                    <article data-cats="web" class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:80ms">
                 <div class="relative aspect-video overflow-hidden border-b border-line bg-surface">
                                             <img src="/images/debouquets-banner.jpeg" alt="DeBouquets" loading="lazy"
                              class="size-full object-cover transition duration-500 group-hover:scale-[1.03]">
@@ -248,7 +284,7 @@
                     <p class="mt-3 text-sm text-muted">I designed the website UI in Figma (catalog, custom order, and login), modeled system requirements with UML, and coordinated all respondents for user acceptance testing (UAT).</p>
 
                                         <div class="mt-auto flex flex-wrap gap-4 pt-5">
-                                                <a href="https://www.figma.com/file/3EHrChIRnCXbywhxvdHJiu/FigmaDeBouquets" target="_blank" rel="noopener noreferrer"
+                                                                        <a href="https://www.figma.com/file/3EHrChIRnCXbywhxvdHJiu/FigmaDeBouquets" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-accent">
                             <i class="fab fa-figma" aria-hidden="true"></i> Figma
                         </a>
@@ -259,7 +295,7 @@
                                             </div>
                                     </div>
             </article>
-                                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:160ms">
+                                    <article data-cats="app" class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:160ms">
                 <div class="relative aspect-video overflow-hidden border-b border-line bg-surface">
                                             <img src="/images/eunoia-banner.jpg" alt="Eunoia" loading="lazy"
                              class="size-full object-cover transition duration-500 group-hover:scale-[1.03]">
@@ -278,14 +314,14 @@
                     <p class="mt-3 text-sm text-muted">My role was testing the AI to find bugs and weaknesses in its responses, and tracking the findings for improvement.</p>
 
                                         <div class="mt-auto flex flex-wrap gap-4 pt-5">
-                                                <a href="https://github.com/Yubeixuan/Eunoia" target="_blank" rel="noopener noreferrer"
+                                                                        <a href="https://github.com/Yubeixuan/Eunoia" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-accent">
                             <i class="fab fa-github" aria-hidden="true"></i> GitHub
                         </a>
                                             </div>
                                     </div>
             </article>
-                                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:0ms">
+                                    <article data-cats="app data" class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:0ms">
                 <div class="relative aspect-video overflow-hidden border-b border-line bg-surface">
                                             <img src="/images/eperpustakaan-banner.jpg" alt="E-Perpustakaan" loading="lazy"
                              class="size-full object-cover transition duration-500 group-hover:scale-[1.03]">
@@ -305,7 +341,7 @@
 
                                     </div>
             </article>
-                                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:80ms">
+                                    <article data-cats="app" class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:80ms">
                 <div class="relative aspect-video overflow-hidden border-b border-line bg-surface">
                                             <img src="/images/predatoria-banner.jpeg" alt="Predatoria" loading="lazy"
                              class="size-full object-cover transition duration-500 group-hover:scale-[1.03]">
@@ -326,14 +362,14 @@
                     <p class="mt-3 text-sm text-muted">Features: mini quizzes, an AR library, daily missions, and level progression, plus user accounts (login and delete account). User experience was evaluated with the User Experience Questionnaire (UEQ).</p>
 
                                         <div class="mt-auto flex flex-wrap gap-4 pt-5">
-                                                <a href="https://beni1412.github.io/virtual/" target="_blank" rel="noopener noreferrer"
+                                                                        <a href="https://beni1412.github.io/virtual/" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-accent">
                             <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
                         </a>
                                             </div>
                                     </div>
             </article>
-                                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:160ms">
+                                    <article data-cats="web" class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:160ms">
                 <div class="relative aspect-video overflow-hidden border-b border-line bg-surface">
                                             <img src="/images/IShowKost-banner.jpeg" alt="IShowKost" loading="lazy"
                              class="size-full object-cover transition duration-500 group-hover:scale-[1.03]">
@@ -353,7 +389,7 @@
                     <p class="mt-3 text-sm text-muted">A responsive website for finding boarding houses by location, type, and date, with promo listings. Code managed on GitHub.</p>
 
                                         <div class="mt-auto flex flex-wrap gap-4 pt-5">
-                                                <a href="https://github.com/stickyfinger222/web-kos" target="_blank" rel="noopener noreferrer"
+                                                                        <a href="https://github.com/stickyfinger222/web-kos" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-accent">
                             <i class="fab fa-github" aria-hidden="true"></i> GitHub
                         </a>
@@ -378,7 +414,10 @@
                 <div>
                     <h3 class="reveal mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-muted">Work</h3>
 
-                    <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:60ms">
+                    <div class="tl reveal-group">
+                    <span class="tl-line" aria-hidden="true"></span>
+                    <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:60ms">
+                        <span class="tl-dot" aria-hidden="true"></span>
                         <p class="text-xs font-medium text-accent">2019 – Present</p>
                         <h4 class="mt-2 text-lg font-bold leading-snug">Operations &amp; Finance Assistant</h4>
                         <p class="text-sm text-muted">Family Rental Property Business · Boarding House &amp; Rental Homes</p>
@@ -408,12 +447,15 @@
 </div>
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 <div>
                     <h3 class="reveal mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-muted">Organizations</h3>
-                    <div class="space-y-4">
-                                                <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:0ms">
+                    <div class="tl reveal-group space-y-4">
+                        <span class="tl-line" aria-hidden="true"></span>
+                                                <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:0ms">
+                            <span class="tl-dot" aria-hidden="true"></span>
                             <p class="text-xs font-medium text-accent">Jul 2025 – Oct 2025</p>
                             <h4 class="mt-2 font-bold leading-snug">Media Team</h4>
                             <p class="text-sm text-muted">Porsinara BINUS</p>
@@ -421,7 +463,8 @@
                                                                 <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Produced video and photo documentation during event activities.</span></li>
                                                             </ul>
                         </div>
-                                                <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:70ms">
+                                                <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:70ms">
+                            <span class="tl-dot" aria-hidden="true"></span>
                             <p class="text-xs font-medium text-accent">2022 – 2024</p>
                             <h4 class="mt-2 font-bold leading-snug">OSIS (Student Council) — Media Division</h4>
                             <p class="text-sm text-muted">Sekolah Kristen Kalam Kudus</p>
@@ -438,8 +481,10 @@
             <div class="space-y-10">
                 <div>
                     <h3 class="reveal mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-muted">Education</h3>
-                    <div class="space-y-4">
-                                                <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:0ms">
+                    <div class="tl reveal-group space-y-4">
+                        <span class="tl-line" aria-hidden="true"></span>
+                                                <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:0ms">
+                            <span class="tl-dot" aria-hidden="true"></span>
                             <p class="text-xs font-medium text-accent">Sep 2024 – Present</p>
                             <h4 class="mt-2 font-bold leading-snug">BINUS University — Bachelor of Computer Science</h4>
                             <ul class="mt-3 space-y-2 text-sm text-muted">
@@ -447,7 +492,8 @@
                                                                 <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Relevant coursework: Big Data Analytics for Business, Software Development, Agile Software Development.</span></li>
                                                             </ul>
                         </div>
-                                                <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:70ms">
+                                                <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:70ms">
+                            <span class="tl-dot" aria-hidden="true"></span>
                             <p class="text-xs font-medium text-accent">Jul 2021 – May 2024</p>
                             <h4 class="mt-2 font-bold leading-snug">Sekolah Kristen Kalam Kudus — High School Diploma, Science</h4>
                             <ul class="mt-3 space-y-2 text-sm text-muted">
@@ -605,6 +651,149 @@
         </div>
     </div>
 </section>
+
+
+<dialog id="case-market" aria-labelledby="case-market-title"
+        class="case-dialog m-auto max-h-[92svh] w-[min(100%-1.5rem,62rem)] overflow-y-auto rounded-2xl border border-line bg-surface p-0 text-ink">
+    <div class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-line bg-surface/95 px-5 py-4 backdrop-blur sm:px-8">
+        <div class="min-w-0">
+            <p class="section-eyebrow" style="margin-bottom:.25rem">Case study</p>
+            <h2 id="case-market-title" class="text-xl font-bold leading-snug sm:text-2xl">Market Basket Analysis &amp; Demand Forecasting</h2>
+            <p class="mt-1 text-xs text-muted">Big Data Analytics · Team of 4 · Sep 2026 – Present</p>
+        </div>
+        <button type="button" data-close-dialog aria-label="Close"
+                class="grid size-10 shrink-0 place-items-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-accent">
+            <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="space-y-10 px-5 py-8 sm:px-8">
+        
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Problem</h3>
+            <p class="mt-3 text-muted">Small online shops run on limited capital. Excess stock ties up cash in slow-moving items, takes up warehouse space, and risks becoming waste. Without a demand forecast, restocking is a guess — a topic tied to SDG 12 (responsible consumption and production).</p>
+        </section>
+
+        
+        <div class="grid gap-10 md:grid-cols-2">
+            <section>
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">My role</h3>
+                <ul class="mt-3 space-y-2 text-sm text-muted">
+                                        <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Wrote all the code (Python, Jupyter) and the project report.</span></li>
+                                        <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Lead presenter for the 4-person team.</span></li>
+                                        <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Wrote the proposal with a 15-article literature review.</span></li>
+                                        <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Built interactive dashboards in Power BI and Tableau.</span></li>
+                                    </ul>
+            </section>
+            <section>
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Approach</h3>
+                <ul class="mt-3 space-y-2 text-sm text-muted">
+                                        <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Profiled the Online Retail II dataset (1.07 million transaction rows): identified 34,335 duplicate rows and 8,292 cancellation invoices for cleaning.</span></li>
+                                        <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Association rule mining to find products frequently bought together.</span></li>
+                                        <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Time series forecasting: compared three methods (Linear Trend, Naive same-day-last-week, and 4-week Seasonal SMA) on daily demand.</span></li>
+                                    </ul>
+            </section>
+        </div>
+
+        
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Findings</h3>
+            <ul class="mt-3 space-y-2 text-sm text-muted">
+                                <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Products from the same series or category tend to be bought together.</span></li>
+                                <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Among the three methods on the dashboard, Linear Trend was the most accurate.</span></li>
+                            </ul>
+
+            <div class="mt-6 overflow-x-auto rounded-xl border border-line bg-card">
+                <table class="w-full min-w-[22rem] text-left text-sm">
+                    <caption class="border-b border-line px-4 py-3 text-left text-xs text-muted">Forecast accuracy (units per day, all days — lower is better)</caption>
+                    <thead class="text-xs uppercase tracking-wider text-muted">
+                        <tr>
+                            <th scope="col" class="px-4 py-2 font-semibold">Method</th>
+                            <th scope="col" class="px-4 py-2 text-right font-semibold">MAE</th>
+                            <th scope="col" class="px-4 py-2 text-right font-semibold">RMSE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                <tr class="border-t border-line text-ink">
+                            <th scope="row" class="px-4 py-3 font-medium">
+                                Linear Trend
+                                                                <span class="ml-2 rounded-md bg-accent-soft px-2 py-0.5 text-[11px] font-semibold text-accent">Best</span>
+                                                            </th>
+                            <td class="px-4 py-3 text-right tabular-nums font-bold text-accent">100</td>
+                            <td class="px-4 py-3 text-right tabular-nums font-bold text-accent">115</td>
+                        </tr>
+                                                <tr class="border-t border-line text-muted">
+                            <th scope="row" class="px-4 py-3 font-medium">
+                                4-week Seasonal SMA
+                                                            </th>
+                            <td class="px-4 py-3 text-right tabular-nums ">107</td>
+                            <td class="px-4 py-3 text-right tabular-nums ">129</td>
+                        </tr>
+                                                <tr class="border-t border-line text-muted">
+                            <th scope="row" class="px-4 py-3 font-medium">
+                                Naive (same day last week)
+                                                            </th>
+                            <td class="px-4 py-3 text-right tabular-nums ">136</td>
+                            <td class="px-4 py-3 text-right tabular-nums ">165</td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+            <p class="mt-2 text-xs text-muted">On open days only, Linear Trend improves to MAE 92 and RMSE 108.</p>
+        </section>
+
+        
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Business recommendations</h3>
+            <ul class="mt-3 space-y-2 text-sm text-muted">
+                                <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Create bundles for product pairs that are often bought together (for example, one series sold as one pack).</span></li>
+                                <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Show paired products side by side on product pages as “frequently bought together”.</span></li>
+                                <li class="flex gap-3"><span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span><span>Schedule weekly restocking based on the Linear Trend forecast, so stock follows demand instead of gut feeling.</span></li>
+                            </ul>
+        </section>
+
+        
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Tools</h3>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="tag">Python</span>
+                                <span class="tag">Jupyter</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Association Rule Mining</span>
+                                <span class="tag">Time Series Forecasting</span>
+                            </div>
+        </section>
+
+        
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Dashboard</h3>
+            <p class="mt-3 text-sm text-muted">Daily forecast vs actual, top 10 association rules by lift, top products, and revenue by country.</p>
+
+            <div class="mt-4 max-h-[70svh] overflow-auto rounded-xl border border-line bg-white">
+                <button type="button" data-zoom aria-label="Click the image to zoom" class="block w-full text-left">
+                    <img src="/images/market-basket-dashboard.jpg" alt="Market Basket Analysis &amp; Demand Forecasting — dashboard" loading="lazy" class="block h-auto">
+                </button>
+            </div>
+            <p class="mt-2 text-xs text-muted">Click the image to zoom</p>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+                <button type="button" class="btn btn-primary"
+                        data-embed-src="https://public.tableau.com/views/BDAFinalProject-MarketBasketandDemandForecast/Dashboard1?:embed=true&amp;:showVizHome=no&amp;:display_count=n&amp;:origin=viz_share_link" data-embed-target="tableau-slot" data-embed-title="Market Basket Analysis &amp; Demand Forecasting — Tableau Public">
+                    <i class="fas fa-chart-column" aria-hidden="true"></i> Load interactive dashboard
+                </button>
+                <a href="https://public.tableau.com/views/BDAFinalProject-MarketBasketandDemandForecast/Dashboard1" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Open on Tableau Public
+                </a>
+                <a href="/images/market-basket-dashboard.jpg" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fas fa-image" aria-hidden="true"></i> Open full image
+                </a>
+            </div>
+            <p class="mt-2 text-xs text-muted">The dashboard loads from Tableau Public only when you press the button.</p>
+            <div id="tableau-slot" class="mt-5" hidden></div>
+        </section>
+    </div>
+</dialog>
 
     </main>
 

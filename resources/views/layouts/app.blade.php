@@ -34,19 +34,27 @@
     <script>document.documentElement.classList.add('js');</script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @if(config('app.analytics'))
+    {{-- Vercel Analytics (tanpa cookie). Aktifkan di Vercel: Project → Analytics → Enable --}}
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    @endif
 </head>
 <body class="min-h-screen bg-bg text-ink">
 
     @php
     $navLinks = [
-        ['#about', $t['nav']['about']],
-        ['#projects', $t['nav']['projects']],
-        ['#experience', $t['nav']['experience']],
-        ['#skills', $t['nav']['skills']],
-        ['#contact', $t['nav']['contact']],
+        ['about', $t['nav']['about']],
+        ['projects', $t['nav']['projects']],
+        ['experience', $t['nav']['experience']],
+        ['skills', $t['nav']['skills']],
+        ['contact', $t['nav']['contact']],
     ];
     $switchUrl = $lang === 'en' ? url('/') : url('/en');
     @endphp
+
+    <div id="scroll-progress" aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px] origin-left scale-x-0 bg-accent"></div>
 
     <nav id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-bg/80 backdrop-blur-xl transition-colors">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
@@ -54,8 +62,8 @@
 
             <div class="flex items-center gap-3">
                 <ul class="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
-                    @foreach($navLinks as [$href, $label])
-                    <li><a href="{{ $href }}" class="transition-colors hover:text-ink">{{ $label }}</a></li>
+                    @foreach($navLinks as [$id, $label])
+                    <li><a href="#{{ $id }}" data-nav="{{ $id }}" class="transition-colors hover:text-ink">{{ $label }}</a></li>
                     @endforeach
                 </ul>
 
@@ -72,8 +80,8 @@
         </div>
 
         <ul id="mobile-menu" class="hidden border-t border-line px-5 pb-4 pt-2 text-sm font-medium text-muted md:hidden">
-            @foreach($navLinks as [$href, $label])
-            <li><a href="{{ $href }}" class="block py-3">{{ $label }}</a></li>
+            @foreach($navLinks as [$id, $label])
+            <li><a href="#{{ $id }}" data-nav="{{ $id }}" class="block py-3">{{ $label }}</a></li>
             @endforeach
         </ul>
     </nav>

@@ -20,6 +20,7 @@ return [
     'hero' => [
         'badge' => 'Whatever company needs me to be or do',
         'name' => 'Yubel Hakinen Joshua Lita',
+        'roles' => ['Data Analyst', 'IT Business Analyst', 'Financial Analysis'],
         'title_a' => 'Turning data into',
         'title_b' => 'business insight.',
         'subtitle' => 'Computer Science student at BINUS who enjoys working with people in business, especially in finance. Focused on data analytics and IT business analysis.',
@@ -59,6 +60,9 @@ return [
         'eyebrow' => 'Projects',
         'title_a' => 'Selected',
         'title_b' => 'Projects',
+        'filters' => ['all' => 'All', 'data' => 'Data', 'web' => 'Web', 'app' => 'Apps'],
+        'filter_label' => 'Filter projects',
+        'case_cta' => 'View case study',
         'items' => [
             'market' => [
                 'title' => 'Market Basket Analysis & Demand Forecasting',
@@ -97,6 +101,55 @@ return [
                 'extra' => 'A responsive website for finding boarding houses by location, type, and date, with promo listings. Code managed on GitHub.',
             ],
         ],
+    ],
+
+    'case' => [
+        'eyebrow' => 'Case study',
+        'close' => 'Close',
+        'meta' => 'Big Data Analytics · Team of 4 · Sep 2026 – Present',
+        'problem_h' => 'Problem',
+        'problem' => 'Small online shops run on limited capital. Excess stock ties up cash in slow-moving items, takes up warehouse space, and risks becoming waste. Without a demand forecast, restocking is a guess — a topic tied to SDG 12 (responsible consumption and production).',
+        'role_h' => 'My role',
+        'role' => [
+            'Wrote all the code (Python, Jupyter) and the project report.',
+            'Lead presenter for the 4-person team.',
+            'Wrote the proposal with a 15-article literature review.',
+            'Built interactive dashboards in Power BI and Tableau.',
+        ],
+        'approach_h' => 'Approach',
+        'approach' => [
+            'Profiled the Online Retail II dataset (1.07 million transaction rows): identified 34,335 duplicate rows and 8,292 cancellation invoices for cleaning.',
+            'Association rule mining to find products frequently bought together.',
+            'Time series forecasting: compared three methods (Linear Trend, Naive same-day-last-week, and 4-week Seasonal SMA) on daily demand.',
+        ],
+        'findings_h' => 'Findings',
+        'findings' => [
+            'Products from the same series or category tend to be bought together.',
+            'Among the three methods on the dashboard, Linear Trend was the most accurate.',
+        ],
+        'table_title' => 'Forecast accuracy (units per day, all days — lower is better)',
+        'table_method' => 'Method',
+        'table_best' => 'Best',
+        'table_rows' => [
+            ['Linear Trend', '100', '115', true],
+            ['4-week Seasonal SMA', '107', '129', false],
+            ['Naive (same day last week)', '136', '165', false],
+        ],
+        'table_note' => 'On open days only, Linear Trend improves to MAE 92 and RMSE 108.',
+        'reco_h' => 'Business recommendations',
+        'reco' => [
+            'Create bundles for product pairs that are often bought together (for example, one series sold as one pack).',
+            'Show paired products side by side on product pages as “frequently bought together”.',
+            'Schedule weekly restocking based on the Linear Trend forecast, so stock follows demand instead of gut feeling.',
+        ],
+        'tools_h' => 'Tools',
+        'dash_h' => 'Dashboard',
+        'dash_caption' => 'Daily forecast vs actual, top 10 association rules by lift, top products, and revenue by country.',
+        'zoom_hint' => 'Click the image to zoom',
+        'load_embed' => 'Load interactive dashboard',
+        'open_tableau' => 'Open on Tableau Public',
+        'open_image' => 'Open full image',
+        'embed_note' => 'The dashboard loads from Tableau Public only when you press the button.',
     ],
 
     'experience' => [

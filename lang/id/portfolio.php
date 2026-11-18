@@ -20,6 +20,7 @@ return [
     'hero' => [
         'badge' => 'Whatever company needs me to be or do',
         'name' => 'Yubel Hakinen Joshua Lita',
+        'roles' => ['Data Analyst', 'IT Business Analyst', 'Financial Analysis'],
         'title_a' => 'Mengubah data menjadi',
         'title_b' => 'insight bisnis.',
         'subtitle' => 'Mahasiswa Computer Science BINUS yang suka berinteraksi dengan orang dalam bisnis, terutama dalam finance. Fokus pada data analytics dan IT business analysis.',
@@ -59,6 +60,9 @@ return [
         'eyebrow' => 'Projects',
         'title_a' => 'Proyek',
         'title_b' => 'Pilihan Saya',
+        'filters' => ['all' => 'Semua', 'data' => 'Data', 'web' => 'Web', 'app' => 'Aplikasi'],
+        'filter_label' => 'Filter proyek',
+        'case_cta' => 'Lihat studi kasus',
         'items' => [
             'market' => [
                 'title' => 'Market Basket Analysis & Demand Forecasting',
@@ -97,6 +101,55 @@ return [
                 'extra' => 'Website responsif untuk mencari kos berdasarkan lokasi, tipe, dan tanggal, lengkap dengan listing promo. Kode dikelola di GitHub.',
             ],
         ],
+    ],
+
+    'case' => [
+        'eyebrow' => 'Studi kasus',
+        'close' => 'Tutup',
+        'meta' => 'Big Data Analytics · Tim 4 orang · Sep 2026 – Sekarang',
+        'problem_h' => 'Masalah',
+        'problem' => 'Toko online kecil bermodal terbatas. Stok berlebih mengunci uang pada barang yang lambat laku, memakan ruang gudang, dan berisiko menjadi limbah. Tanpa prakiraan permintaan, restock hanya ditebak, padahal topik ini terkait SDG 12 (konsumsi dan produksi yang bertanggung jawab).',
+        'role_h' => 'Peran saya',
+        'role' => [
+            'Menulis seluruh kode (Python, Jupyter) dan laporan proyek.',
+            'Menjadi presenter utama untuk tim 4 orang.',
+            'Menulis proposal dengan tinjauan 15 artikel literatur.',
+            'Membangun dashboard interaktif di Power BI dan Tableau.',
+        ],
+        'approach_h' => 'Pendekatan',
+        'approach' => [
+            'Profiling dataset Online Retail II (1,07 juta baris transaksi): ditemukan 34.335 baris duplikat dan 8.292 invoice pembatalan untuk dibersihkan.',
+            'Association rule mining untuk menemukan produk yang sering dibeli bersamaan.',
+            'Time series forecasting: membandingkan tiga metode (Linear Trend, Naive hari yang sama minggu lalu, dan Seasonal SMA 4 minggu) pada permintaan harian.',
+        ],
+        'findings_h' => 'Temuan',
+        'findings' => [
+            'Produk dalam satu seri atau kategori yang sama cenderung dibeli bersamaan.',
+            'Di antara tiga metode pada dashboard, Linear Trend paling akurat.',
+        ],
+        'table_title' => 'Akurasi forecasting (unit per hari, semua hari — semakin kecil semakin baik)',
+        'table_method' => 'Metode',
+        'table_best' => 'Terbaik',
+        'table_rows' => [
+            ['Linear Trend', '100', '115', true],
+            ['Seasonal SMA 4 minggu', '107', '129', false],
+            ['Naive (hari sama minggu lalu)', '136', '165', false],
+        ],
+        'table_note' => 'Pada hari buka saja, Linear Trend membaik ke MAE 92 dan RMSE 108.',
+        'reco_h' => 'Rekomendasi bisnis',
+        'reco' => [
+            'Buat paket bundling untuk pasangan produk yang sering dibeli bersamaan (misalnya satu seri dijual satu paket).',
+            'Tampilkan produk pasangan berdekatan di halaman produk sebagai “sering dibeli bersama”.',
+            'Jadwalkan restock mingguan berdasarkan prakiraan Linear Trend, supaya stok mengikuti permintaan dan tidak menumpuk karena firasat.',
+        ],
+        'tools_h' => 'Alat yang dipakai',
+        'dash_h' => 'Dashboard',
+        'dash_caption' => 'Forecast vs actual harian, top 10 association rules by lift, top produk, dan revenue per negara.',
+        'zoom_hint' => 'Klik gambar untuk memperbesar',
+        'load_embed' => 'Muat dashboard interaktif',
+        'open_tableau' => 'Buka di Tableau Public',
+        'open_image' => 'Buka gambar penuh',
+        'embed_note' => 'Dashboard dimuat dari Tableau Public hanya saat Anda menekan tombol.',
     ],
 
     'experience' => [

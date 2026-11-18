@@ -20,7 +20,12 @@
                 {{ $h['badge'] }}
             </div>
 
-            <p class="reveal mt-8 text-sm font-semibold tracking-wide text-muted" style="--d:60ms">{{ $h['name'] }}</p>
+            <div class="reveal mt-8" style="--d:60ms">
+                <p class="text-sm font-semibold tracking-wide text-muted">{{ $h['name'] }}</p>
+                <p class="mt-1 text-sm font-semibold text-accent">
+                    <span data-rotate data-items='@json($h['roles'])'>{{ $h['roles'][0] }}</span>
+                </p>
+            </div>
 
             <h1 class="reveal mt-3 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl" style="--d:100ms">
                 {{ $h['title_a'] }}<br>
@@ -108,7 +113,11 @@
                 @foreach($a['stats'] as $i => [$num, $label])
                 <div class="reveal flex flex-col rounded-xl border border-line bg-card p-4" style="--d:{{ 220 + $i * 60 }}ms">
                     <dt class="order-2 mt-1 text-xs leading-snug text-muted">{{ $label }}</dt>
-                    <dd class="text-2xl font-bold text-ink">{{ $num }}</dd>
+                    @php
+                        $isNum = is_numeric($num);
+                        $dec = $isNum && str_contains($num, '.') ? strlen(substr(strrchr($num, '.'), 1)) : 0;
+                    @endphp
+                    <dd class="text-2xl font-bold text-ink" @if($isNum) data-count="{{ $num }}" data-decimals="{{ $dec }}" @endif>{{ $num }}</dd>
                 </div>
                 @endforeach
             </dl>
@@ -125,11 +134,14 @@
     $projects = [
         'market' => [
             'image' => 'images/market-basket-dashboard.jpg',
+            'cats' => 'data',
+            'case' => true,
             'tags' => ['Python', 'Jupyter', 'Power BI', 'Tableau', 'Association Rule Mining', 'Time Series Forecasting'],
             'links' => [],
         ],
         'debouquets' => [
             'image' => 'images/debouquets-banner.jpeg',
+            'cats' => 'web',
             'tags' => ['JavaScript', 'Figma', 'HTML', 'UML', 'UAT'],
             'links' => [
                 ['Figma', 'fab fa-figma', 'https://www.figma.com/file/3EHrChIRnCXbywhxvdHJiu/FigmaDeBouquets'],
@@ -138,21 +150,25 @@
         ],
         'eunoia' => [
             'image' => 'images/eunoia-banner.jpg',
+            'cats' => 'app',
             'tags' => ['Testing', 'Bug Tracking'],
             'links' => [['GitHub', 'fab fa-github', 'https://github.com/Yubeixuan/Eunoia']],
         ],
         'eperpus' => [
             'image' => 'images/eperpustakaan-banner.jpg',
+            'cats' => 'app data',
             'tags' => ['JavaScript', 'MySQL'],
             'links' => [],
         ],
         'predatoria' => [
             'image' => 'images/predatoria-banner.jpeg',
+            'cats' => 'app',
             'tags' => ['AR', 'CSS', 'HTML', 'UEQ'],
             'links' => [['Demo', 'fas fa-arrow-up-right-from-square', 'https://beni1412.github.io/virtual/']],
         ],
         'ishowkost' => [
             'image' => 'images/IShowKost-banner.jpeg',
+            'cats' => 'web',
             'tags' => ['CSS', 'HTML', 'JavaScript'],
             'links' => [['GitHub', 'fab fa-github', 'https://github.com/stickyfinger222/web-kos']],
         ],
@@ -165,10 +181,19 @@
             {{ $pt['title_a'] }} <span class="text-accent">{{ $pt['title_b'] }}</span>
         </h2>
 
-        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="filter-bar mt-8 flex-wrap gap-2" role="group" aria-label="{{ $pt['filter_label'] }}">
+            @foreach($pt['filters'] as $fKey => $fLabel)
+            <button type="button" data-filter="{{ $fKey }}" aria-pressed="{{ $loop->first ? 'true' : 'false' }}"
+                    class="filter-btn rounded-full border border-line px-4 py-1.5 text-sm font-medium text-muted transition-colors hover:border-accent/50 hover:text-ink">
+                {{ $fLabel }}
+            </button>
+            @endforeach
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach($projects as $key => $p)
             @php $txt = $pt['items'][$key]; @endphp
-            <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:{{ ($loop->index % 3) * 80 }}ms">
+            <article data-cats="{{ $p['cats'] }}" class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition duration-300 hover:-translate-y-1 hover:border-accent/40" style="--d:{{ ($loop->index % 3) * 80 }}ms">
                 <div class="relative aspect-video overflow-hidden border-b border-line bg-surface">
                     @if(isset($p['image']))
                         <img src="{{ asset($p['image']) }}" alt="{{ $txt['title'] }}" loading="lazy"
@@ -193,8 +218,14 @@
                     <p class="mt-4 text-sm text-muted">{{ $txt['desc'] }}</p>
                     <p class="mt-3 text-sm text-muted">{{ $txt['extra'] }}</p>
 
-                    @if(count($p['links']))
+                    @if(count($p['links']) || ! empty($p['case']))
                     <div class="mt-auto flex flex-wrap gap-4 pt-5">
+                        @if(! empty($p['case']))
+                        <button type="button" data-open-dialog="case-{{ $key }}"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-opacity hover:opacity-80">
+                            <i class="fas fa-expand" aria-hidden="true"></i> {{ $pt['case_cta'] }}
+                        </button>
+                        @endif
                         @foreach($p['links'] as [$label, $icon, $url])
                         <a href="{{ $url }}" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-accent">
@@ -230,7 +261,10 @@
                 <div>
                     <h3 class="reveal mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-muted">{{ $ex['work_heading'] }}</h3>
 
-                    <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:60ms">
+                    <div class="tl reveal-group">
+                    <span class="tl-line" aria-hidden="true"></span>
+                    <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:60ms">
+                        <span class="tl-dot" aria-hidden="true"></span>
                         <p class="text-xs font-medium text-accent">{{ $w['period'] }}</p>
                         <h4 class="mt-2 text-lg font-bold leading-snug">{{ $w['role'] }}</h4>
                         <p class="text-sm text-muted">{{ $w['org'] }}</p>
@@ -253,13 +287,16 @@
                             ])
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 <div>
                     <h3 class="reveal mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-muted">{{ $ex['org_heading'] }}</h3>
-                    <div class="space-y-4">
+                    <div class="tl reveal-group space-y-4">
+                        <span class="tl-line" aria-hidden="true"></span>
                         @foreach($ex['orgs'] as $i => $o)
-                        <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:{{ $i * 70 }}ms">
+                        <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:{{ $i * 70 }}ms">
+                            <span class="tl-dot" aria-hidden="true"></span>
                             <p class="text-xs font-medium text-accent">{{ $o['period'] }}</p>
                             <h4 class="mt-2 font-bold leading-snug">{{ $o['role'] }}</h4>
                             <p class="text-sm text-muted">{{ $o['org'] }}</p>
@@ -278,9 +315,11 @@
             <div class="space-y-10">
                 <div>
                     <h3 class="reveal mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-muted">{{ $ex['edu_heading'] }}</h3>
-                    <div class="space-y-4">
+                    <div class="tl reveal-group space-y-4">
+                        <span class="tl-line" aria-hidden="true"></span>
                         @foreach($ex['edu'] as $i => $e)
-                        <div class="reveal rounded-2xl border border-line bg-card p-6" style="--d:{{ $i * 70 }}ms">
+                        <div class="reveal relative rounded-2xl border border-line bg-card p-6" style="--d:{{ $i * 70 }}ms">
+                            <span class="tl-dot" aria-hidden="true"></span>
                             <p class="text-xs font-medium text-accent">{{ $e['period'] }}</p>
                             <h4 class="mt-2 font-bold leading-snug">{{ $e['role'] }}</h4>
                             <ul class="mt-3 space-y-2 text-sm text-muted">
@@ -377,5 +416,145 @@
         </div>
     </div>
 </section>
+
+{{-- ═══════════════════════════════════
+     STUDI KASUS: MARKET BASKET (dialog)
+════════════════════════════════════ --}}
+@php
+    $cs = $t['case'];
+    $mk = $pt['items']['market'];
+    $tableauBase = 'https://public.tableau.com/views/BDAFinalProject-MarketBasketandDemandForecast/Dashboard1';
+    $tableauEmbed = $tableauBase.'?:embed=true&:showVizHome=no&:display_count=n&:origin=viz_share_link';
+    $dashImg = asset('images/market-basket-dashboard.jpg');
+    $bullet = '<span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent"></span>';
+@endphp
+<dialog id="case-market" aria-labelledby="case-market-title"
+        class="case-dialog m-auto max-h-[92svh] w-[min(100%-1.5rem,62rem)] overflow-y-auto rounded-2xl border border-line bg-surface p-0 text-ink">
+    <div class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-line bg-surface/95 px-5 py-4 backdrop-blur sm:px-8">
+        <div class="min-w-0">
+            <p class="section-eyebrow" style="margin-bottom:.25rem">{{ $cs['eyebrow'] }}</p>
+            <h2 id="case-market-title" class="text-xl font-bold leading-snug sm:text-2xl">{{ $mk['title'] }}</h2>
+            <p class="mt-1 text-xs text-muted">{{ $cs['meta'] }}</p>
+        </div>
+        <button type="button" data-close-dialog aria-label="{{ $cs['close'] }}"
+                class="grid size-10 shrink-0 place-items-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-accent">
+            <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="space-y-10 px-5 py-8 sm:px-8">
+        {{-- Masalah --}}
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{{ $cs['problem_h'] }}</h3>
+            <p class="mt-3 text-muted">{{ $cs['problem'] }}</p>
+        </section>
+
+        {{-- Peran + Pendekatan --}}
+        <div class="grid gap-10 md:grid-cols-2">
+            <section>
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{{ $cs['role_h'] }}</h3>
+                <ul class="mt-3 space-y-2 text-sm text-muted">
+                    @foreach($cs['role'] as $item)
+                    <li class="flex gap-3">{!! $bullet !!}<span>{{ $item }}</span></li>
+                    @endforeach
+                </ul>
+            </section>
+            <section>
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{{ $cs['approach_h'] }}</h3>
+                <ul class="mt-3 space-y-2 text-sm text-muted">
+                    @foreach($cs['approach'] as $item)
+                    <li class="flex gap-3">{!! $bullet !!}<span>{{ $item }}</span></li>
+                    @endforeach
+                </ul>
+            </section>
+        </div>
+
+        {{-- Temuan --}}
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{{ $cs['findings_h'] }}</h3>
+            <ul class="mt-3 space-y-2 text-sm text-muted">
+                @foreach($cs['findings'] as $item)
+                <li class="flex gap-3">{!! $bullet !!}<span>{{ $item }}</span></li>
+                @endforeach
+            </ul>
+
+            <div class="mt-6 overflow-x-auto rounded-xl border border-line bg-card">
+                <table class="w-full min-w-[22rem] text-left text-sm">
+                    <caption class="border-b border-line px-4 py-3 text-left text-xs text-muted">{{ $cs['table_title'] }}</caption>
+                    <thead class="text-xs uppercase tracking-wider text-muted">
+                        <tr>
+                            <th scope="col" class="px-4 py-2 font-semibold">{{ $cs['table_method'] }}</th>
+                            <th scope="col" class="px-4 py-2 text-right font-semibold">MAE</th>
+                            <th scope="col" class="px-4 py-2 text-right font-semibold">RMSE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($cs['table_rows'] as [$method, $mae, $rmse, $best])
+                        <tr class="border-t border-line {{ $best ? 'text-ink' : 'text-muted' }}">
+                            <th scope="row" class="px-4 py-3 font-medium">
+                                {{ $method }}
+                                @if($best)
+                                <span class="ml-2 rounded-md bg-accent-soft px-2 py-0.5 text-[11px] font-semibold text-accent">{{ $cs['table_best'] }}</span>
+                                @endif
+                            </th>
+                            <td class="px-4 py-3 text-right tabular-nums {{ $best ? 'font-bold text-accent' : '' }}">{{ $mae }}</td>
+                            <td class="px-4 py-3 text-right tabular-nums {{ $best ? 'font-bold text-accent' : '' }}">{{ $rmse }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-2 text-xs text-muted">{{ $cs['table_note'] }}</p>
+        </section>
+
+        {{-- Rekomendasi --}}
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{{ $cs['reco_h'] }}</h3>
+            <ul class="mt-3 space-y-2 text-sm text-muted">
+                @foreach($cs['reco'] as $item)
+                <li class="flex gap-3">{!! $bullet !!}<span>{{ $item }}</span></li>
+                @endforeach
+            </ul>
+        </section>
+
+        {{-- Alat --}}
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{{ $cs['tools_h'] }}</h3>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+                @foreach($projects['market']['tags'] as $tag)
+                <span class="tag">{{ $tag }}</span>
+                @endforeach
+            </div>
+        </section>
+
+        {{-- Dashboard --}}
+        <section>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{{ $cs['dash_h'] }}</h3>
+            <p class="mt-3 text-sm text-muted">{{ $cs['dash_caption'] }}</p>
+
+            <div class="mt-4 max-h-[70svh] overflow-auto rounded-xl border border-line bg-white">
+                <button type="button" data-zoom aria-label="{{ $cs['zoom_hint'] }}" class="block w-full text-left">
+                    <img src="{{ $dashImg }}" alt="{{ $mk['title'] }} — dashboard" loading="lazy" class="block h-auto">
+                </button>
+            </div>
+            <p class="mt-2 text-xs text-muted">{{ $cs['zoom_hint'] }}</p>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+                <button type="button" class="btn btn-primary"
+                        data-embed-src="{{ $tableauEmbed }}" data-embed-target="tableau-slot" data-embed-title="{{ $mk['title'] }} — Tableau Public">
+                    <i class="fas fa-chart-column" aria-hidden="true"></i> {{ $cs['load_embed'] }}
+                </button>
+                <a href="{{ $tableauBase }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> {{ $cs['open_tableau'] }}
+                </a>
+                <a href="{{ $dashImg }}" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fas fa-image" aria-hidden="true"></i> {{ $cs['open_image'] }}
+                </a>
+            </div>
+            <p class="mt-2 text-xs text-muted">{{ $cs['embed_note'] }}</p>
+            <div id="tableau-slot" class="mt-5" hidden></div>
+        </section>
+    </div>
+</dialog>
 
 @endsection

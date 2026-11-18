@@ -42,6 +42,11 @@ return [
     'debug' => (bool) env('APP_DEBUG', false),
 
     /*
+    | Aktifkan snippet Vercel Analytics (diisi true oleh scripts/build-static.php).
+    */
+    'analytics' => (bool) env('SITE_ANALYTICS', false),
+
+    /*
     |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
