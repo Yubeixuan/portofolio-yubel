@@ -18,7 +18,7 @@ return [
     ],
 
     'hero' => [
-        'badge' => 'Tersedia untuk Magang & Kolaborasi',
+        'badge' => 'Whatever company needs me to be or do',
         'name' => 'Yubel Hakinen Joshua Lita',
         'title_a' => 'Mengubah data menjadi',
         'title_b' => 'insight bisnis.',
@@ -64,7 +64,7 @@ return [
                 'title' => 'Market Basket Analysis & Demand Forecasting',
                 'period' => 'Sep 2026 – Sekarang',
                 'desc' => 'Proyek Big Data Analytics (tim 4 orang) untuk mengurangi pemborosan overstock pada ritel online kecil, selaras dengan UN SDG 12. Saya menulis seluruh kode dan laporan serta menjadi presenter utama.',
-                'extra' => 'Dataset Online Retail II (1,07 juta baris transaksi) diprofilkan dan ditemukan 34.335 baris duplikat serta 8.292 invoice pembatalan untuk dibersihkan, lalu dilanjutkan dengan association rule mining dan time series forecasting untuk rekomendasi bisnis. Proposal ditulis dengan tinjauan 15 artikel literatur.',
+                'extra' => 'Dataset Online Retail II (1,07 juta baris transaksi) diprofilkan dan ditemukan 34.335 baris duplikat serta 8.292 invoice pembatalan untuk dibersihkan, lalu dilanjutkan dengan association rule mining dan time series forecasting untuk rekomendasi bisnis. Proposal ditulis dengan tinjauan 15 artikel literatur, dan dashboard interaktif dibangun di Power BI dan Tableau untuk memvisualisasikan pola penjualan serta hasil forecast.',
             ],
             'debouquets' => [
                 'title' => 'DeBouquets',
@@ -111,12 +111,12 @@ return [
             'bullets' => [
                 'Membantu manajemen penyewa, penagihan, pencatatan keuangan, dan operasional harian untuk 29 kamar.',
                 'Menangani komunikasi dengan penyewa serta menyelesaikan masalah perawatan dan pembayaran.',
-                'Usaha berkembang dari satu kos 20 kamar menjadi 29 kamar dengan tambahan 9 kamar sewa; saat ini sedang mencari lahan untuk kos baru.',
+                'Usaha berkembang dari kos 20 kamar menjadi 29 kamar; saat ini sedang mencari lahan untuk kos baru.',
             ],
             'chart_title' => 'Pertumbuhan usaha',
             'chart_a' => 'Kos awal',
             'chart_a_value' => '20 kamar',
-            'chart_b' => 'Kamar sewa tambahan',
+            'chart_b' => 'Tambahan kamar',
             'chart_b_value' => '9 kamar',
             'chart_default' => '29 kamar total — arahkan kursor ke bar',
         ],
@@ -145,13 +145,13 @@ return [
                 'period' => 'Sep 2024 – Sekarang',
                 'bullets' => [
                     'IPK 3,18/4,00 (hingga semester 4).',
-                    'Mata kuliah relevan: Big Data Analytics for Business, Software Development, Agile Software Development, Mobile Programming.',
+                    'Mata kuliah relevan: Big Data Analytics for Business, Software Development, Agile Software Development.',
                 ],
             ],
             [
                 'role' => 'Sekolah Kristen Kalam Kudus — SMA IPA',
                 'period' => 'Jul 2021 – Mei 2024',
-                'bullets' => ['Juara OSN Informatika tingkat Kabupaten/Kota, Dinas Pendidikan Provinsi Papua (2022).'],
+                'bullets' => ['Juara OSN Informatika tingkat Kabupaten/Kota, Papua (2022).'],
             ],
         ],
         'cert_heading' => 'Sertifikasi',
@@ -166,7 +166,7 @@ return [
         'title_a' => 'Apa yang Saya',
         'title_b' => 'Kuasai',
         'groups' => [
-            ['Data & Analytics', 'fa-chart-column', ['Python', 'Jupyter', 'Data Preparation', 'Association Rule Mining', 'Time Series Forecasting', 'MySQL']],
+            ['Data & Analytics', 'fa-chart-column', ['Python', 'Jupyter', 'Power BI', 'Tableau', 'Data Preparation', 'Association Rule Mining', 'Time Series Forecasting', 'MySQL']],
             ['Web & Tools', 'fa-code', ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'React.js', 'Figma', 'GitHub', 'Mobile App Development']],
             ['Business & Analysis', 'fa-diagram-project', ['IT Business Analysis', 'Financial Analysis', 'UML', 'User Acceptance Testing (UAT)', 'UEQ', 'Software Testing', 'Bug Tracking']],
             ['Lainnya', 'fa-users', ['Teamwork', 'Public Speaking', 'Photography', 'Photo & Video Editing', 'English (C1–C2)', 'Bahasa Indonesia (Native)']],

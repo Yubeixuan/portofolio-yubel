@@ -18,7 +18,7 @@ return [
     ],
 
     'hero' => [
-        'badge' => 'Open to Internships & Collaboration',
+        'badge' => 'Whatever company needs me to be or do',
         'name' => 'Yubel Hakinen Joshua Lita',
         'title_a' => 'Turning data into',
         'title_b' => 'business insight.',
@@ -64,7 +64,7 @@ return [
                 'title' => 'Market Basket Analysis & Demand Forecasting',
                 'period' => 'Sep 2026 – Present',
                 'desc' => 'Big Data Analytics team project (4 members) on reducing overstock waste in small online retail, aligned with UN SDG 12. I developed all the code and the report, and serve as lead presenter.',
-                'extra' => 'Profiled the Online Retail II dataset (1.07 million transaction rows) and identified 34,335 duplicate rows and 8,292 cancellation invoices for cleaning; applying association rule mining and time series forecasting to generate business recommendations. The proposal includes a 15-article literature review.',
+                'extra' => 'Profiled the Online Retail II dataset (1.07 million transaction rows) and identified 34,335 duplicate rows and 8,292 cancellation invoices for cleaning; applying association rule mining and time series forecasting to generate business recommendations. The proposal includes a 15-article literature review, and interactive dashboards are built in Power BI and Tableau to visualize sales patterns and forecasts.',
             ],
             'debouquets' => [
                 'title' => 'DeBouquets',
@@ -111,12 +111,12 @@ return [
             'bullets' => [
                 'Assist with tenant management, billing, financial records, and daily operations across 29 rooms.',
                 'Handle tenant communication and resolve maintenance and payment issues.',
-                'The business grew from one 20-room boarding house to include 9 additional rental rooms; currently scouting land to build a new boarding house.',
+                'The business expanded from a 20-room boarding house to 29 rooms; currently scouting land to build a new one.',
             ],
             'chart_title' => 'Business growth',
             'chart_a' => 'Original boarding house',
             'chart_a_value' => '20 rooms',
-            'chart_b' => 'Added rental rooms',
+            'chart_b' => 'Added rooms',
             'chart_b_value' => '9 rooms',
             'chart_default' => '29 rooms in total — hover a bar',
         ],
@@ -145,13 +145,13 @@ return [
                 'period' => 'Sep 2024 – Present',
                 'bullets' => [
                     'GPA 3.18/4.00 (through semester 4).',
-                    'Relevant coursework: Big Data Analytics for Business, Software Development, Agile Software Development, Mobile Programming.',
+                    'Relevant coursework: Big Data Analytics for Business, Software Development, Agile Software Development.',
                 ],
             ],
             [
                 'role' => 'Sekolah Kristen Kalam Kudus — High School Diploma, Science',
                 'period' => 'Jul 2021 – May 2024',
-                'bullets' => ['Winner, National Science Olympiad (OSN) Informatics, District/City Level, Papua Provincial Education Office (2022).'],
+                'bullets' => ['Winner, National Science Olympiad (OSN) Informatics, District/City Level, Papua (2022).'],
             ],
         ],
         'cert_heading' => 'Certifications',
@@ -166,7 +166,7 @@ return [
         'title_a' => 'What I',
         'title_b' => 'Work With',
         'groups' => [
-            ['Data & Analytics', 'fa-chart-column', ['Python', 'Jupyter', 'Data Preparation', 'Association Rule Mining', 'Time Series Forecasting', 'MySQL']],
+            ['Data & Analytics', 'fa-chart-column', ['Python', 'Jupyter', 'Power BI', 'Tableau', 'Data Preparation', 'Association Rule Mining', 'Time Series Forecasting', 'MySQL']],
             ['Web & Tools', 'fa-code', ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'React.js', 'Figma', 'GitHub', 'Mobile App Development']],
             ['Business & Analysis', 'fa-diagram-project', ['IT Business Analysis', 'Financial Analysis', 'UML', 'User Acceptance Testing (UAT)', 'UEQ', 'Software Testing', 'Bug Tracking']],
             ['Other', 'fa-users', ['Teamwork', 'Public Speaking', 'Photography', 'Photo & Video Editing', 'English (C1–C2)', 'Indonesian (Native)']],

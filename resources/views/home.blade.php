@@ -125,7 +125,7 @@
     $projects = [
         'market' => [
             'image' => 'images/market-basket-dashboard.jpg',
-            'tags' => ['Python', 'Jupyter', 'Association Rule Mining', 'Time Series Forecasting'],
+            'tags' => ['Python', 'Jupyter', 'Power BI', 'Tableau', 'Association Rule Mining', 'Time Series Forecasting'],
             'links' => [],
         ],
         'debouquets' => [
