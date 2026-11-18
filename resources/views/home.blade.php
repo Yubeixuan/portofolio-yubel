@@ -92,10 +92,11 @@
         <div class="reveal mx-auto w-full max-w-sm lg:max-w-none">
             <div class="relative">
                 <div class="absolute -inset-3 -z-10 rounded-3xl border border-accent/25"></div>
-                <img src="{{ asset('images/foto-saya.jpeg') }}"
+                <img src="{{ asset('images/foto-saya-gunung.jpg') }}"
                      alt="Yubel Hakinen Joshua Lita"
+                     width="960" height="1280"
                      loading="lazy"
-                     class="aspect-[4/5] w-full rounded-2xl border border-line object-cover">
+                     class="aspect-[4/5] w-full rounded-2xl border border-line object-cover object-bottom">
             </div>
         </div>
 
